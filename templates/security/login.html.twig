@@ -1,0 +1,61 @@
+{% extends 'security/security-base.html.twig' %}
+
+{% block title %}Connexion
+{% endblock %}
+
+{% block securityForm %}
+
+	<h2>Connexion</h2>
+
+	<div class="shadow py-4 px-3 mb-3 mt-4 bg-white rounded-lg" style="width: 18rem;">
+
+		<form method="post">
+
+			{% if error %}
+				<div class="text-danger">
+					{{ error.messageKey|trans(error.messageData, 'security') }}
+				</div>
+			{% endif %}
+
+			<fieldset
+				class="uk-fieldset">
+
+				{# EMAIL #}
+				<div class="md-input">
+					<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="md-form-control" required="required" autofocus="autofocus">
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label>Email</label>
+				</div>
+
+				{# PASSWORD #}
+				<div class="md-input">
+					<input type="password" name="password" id="inputPassword" class="md-form-control" required="required">
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label>Password</label>
+				</div>
+
+				{# REMEMBER ME #}
+				<div class="custom-control custom-checkbox">
+					<input type="checkbox" class="custom-control-input" id="_remember_me" name="_remember_me">
+					<label class="custom-control-label font-weight-light" for="_remember_me">Se souvenir de moi</label>
+				</div>
+
+			</fieldset>
+			<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+
+			<div class="uk-margin">
+				<button type="submit" class="btn btn-primary btn-block mt-3">Connexion</button>
+			</div>
+
+		</form>
+
+	</div>
+
+	<div class="uk-text-center">
+		<a class="uk-link-reset uk-text-small" href="{{ path('app_register')}}">Créer un compte</a>
+	</div>
+
+{% endblock %}
