@@ -61,7 +61,8 @@ html {
 	}
 
 	.md-form-control:focus ~ label,
-	.md-form-control:valid ~ label {
+	.md-form-control:valid ~ label,
+	.md-form-control.filled ~ label {
 		top: -15px;
 		font-size: 14px;
 		color: rgba(0, 0, 0, 0.3);
@@ -79,8 +80,8 @@ html {
 		-webkit-transition: 0.2s ease all;
 	}
 
-	.md-form-control:valid ~ .bar:before,
-	.md-form-control:valid ~ .bar:after,
+	.md-form-control.filled ~ .bar:before,
+	.md-form-control.filled ~ .bar:after,
 	.md-form-control:focus ~ .bar:before,
 	.md-form-control:focus ~ .bar:after {
 		width: 50%;
