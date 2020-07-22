@@ -2,6 +2,7 @@
   "devDependencies": {
     "@babel/preset-react": "^7.0.0",
     "@symfony/webpack-encore": "^0.28.0",
+    "@types/jquery": "^3.5.0",
     "bootstrap": "^4.4.1",
     "jquery": "^3.5.0",
     "node-sass": "^4.11.0",
